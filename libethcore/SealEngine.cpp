@@ -171,12 +171,12 @@ SealEngineFace* SealEngineRegistrar::create(ChainOperationParams const& _params)
 
 EVMSchedule const& SealEngineBase::evmSchedule(u256 const& _blockNumber) const
 {
-	//////////////////////////////////////////////////////// // qtum
+	//////////////////////////////////////////////////////// // cico
 	if (u256(0) == chainParams().EIP158ForkBlock && 
 		u256(0) == chainParams().EIP150ForkBlock &&
 		u256(0) == chainParams().homesteadForkBlock &&
 		 false  == chainParams().allowFutureBlocks){
-			return getQtumSchedule();
+			return getCicoSchedule();
 	}
 	////////////////////////////////////////////////////////
 	return chainParams().scheduleForBlockNumber(_blockNumber);
